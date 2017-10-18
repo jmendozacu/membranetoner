@@ -4,7 +4,7 @@
 ## it might be /cgi-bin/php-cgi
 # SuPHP_ConfigPath /home/faranani/public_html/php.ini
 
-SuPHP_ConfigPath /home/faranani/public_html/toner
+#SuPHP_ConfigPath /home/faranani/public_html/toner
 
 #    Action php5-cgi /cgi-bin/php5-cgi
 #    AddHandler php5-cgi .php
