@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<modules>
+	    <MagentoPycho_PdfInvoice>
+	      <version>1.0.0</version>
+	    </MagentoPycho_PdfInvoice>
+	</modules>
+	<global>
+        <models>
+            <sales>
+                  <rewrite>
+						<order_pdf_invoice>MagentoPycho_PdfInvoice_Model_Sales_Order_Pdf_Invoice</order_pdf_invoice>	
+                  </rewrite>
+            </sales>
+        </models>
+	</global>  
+</config> 

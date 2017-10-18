@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category   Payments
+ * @package    Iveri
+ * @copyright  
+ */
+-->
+<config>
+    <modules>
+        <Iveri>
+            <version>0.8.0</version>
+        </Iveri>
+    </modules>
+    <global>
+        <models>
+            <iveri>
+                <class>Mage_Iveri_Model</class>
+            </iveri>
+        </models>
+        <helpers>
+	    <iveri>
+                <class>Mage_Iveri_Helper</class>
+            </iveri>
+	</helpers>
+        <resources>
+            <iveri_setup>
+                <setup>
+                    <module>Mage_Iveri</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </iveri_setup>
+            <iveri_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </iveri_write>
+            <iveri_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </iveri_read>
+        </resources>
+        <blocks>
+            <iveri><class>Mage_Iveri_Block</class></iveri>
+        </blocks>
+        <payment>
+            <url>https://backoffice.iveri.co.za/Lite/Transactions/New/EasyAuthorise.aspx</url>
+        </payment>
+    </global>
+    <frontend>
+        <routers>
+            <iveri>
+                <use>standard</use>
+                <args>
+                    <module>Mage_Iveri</module>
+                    <frontName>iveri</frontName>
+                </args>
+            </iveri>
+        </routers>
+        <translate>
+            <modules>
+                <iveri>
+                    <files>
+                        <default>Iveri.csv</default>
+                    </files>
+                </iveri>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <iveri>
+                    <file>iveri.xml</file>
+                </iveri>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <translate>
+            <modules>
+                <iveri>
+                    <files>
+                        <default>Iveri.csv</default>
+                    </files>
+                </iveri>
+            </modules>
+        </translate>
+    </adminhtml>
+    <default>
+        <payment>
+            <iveri_cc>
+                <active>0</active>
+                <model>iveri/cc</model>
+                <order_status>1</order_status>
+                <title>Credit Card (IVERI Lite +)</title>
+                <allowspecific>0</allowspecific>
+            </iveri_cc>
+        </payment>
+    </default>
+</config>

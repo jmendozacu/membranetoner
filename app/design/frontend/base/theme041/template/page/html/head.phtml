@@ -1,0 +1,144 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2009 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<title><?php echo $this->getTitle() ?></title>
+<meta http-equiv="Content-Type" content="<?php echo $this->getContentType() ?>" />
+<meta name="description" content="<?php echo htmlspecialchars($this->getDescription()) ?>" />
+<meta name="keywords" content="<?php echo htmlspecialchars($this->getKeywords()) ?>" />
+<meta name="robots" content="<?php echo htmlspecialchars($this->getRobots()) ?>" />
+<link rel="icon" href="<?php echo $this->getSkinUrl('favicon.ico') ?>" type="image/x-icon" />
+<link rel="shortcut icon" href="<?php echo $this->getSkinUrl('favicon.ico') ?>" type="image/x-icon" />
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = '<?php echo $this->helper('core/js')->getJsUrl('blank.html') ?>';
+    var BLANK_IMG = '<?php echo $this->helper('core/js')->getJsUrl('spacer.gif') ?>';
+//]]>
+</script>
+<?php echo $this->getCssJsHtml() ?>
+<?php echo $this->getChildHtml() ?>
+<?php echo $this->helper('core/js')->getTranslatorScript() ?>
+<?php echo $this->getIncludes() ?>
+
+
+<?php 
+	function binder ($binderPosition)
+	{
+		 switch ($binderPosition) {
+			case 'top':
+				$binderTopTags='<div class="side-left-box">
+						<div class="side-right-box">
+							<div class="side-top-box">
+								<div class="side-bot-box">
+									<div class="left-top-box">
+										<div class="right-top-box">
+											<div class="left-bot-box">
+												<div class="right-bot-box">
+													<div class="inside-box">';
+				echo $binderTopTags;
+				break;
+			case 'bottom':
+					$binderBottomTags='</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>';
+				echo $binderBottomTags;
+				break;
+			case 'top-grid':
+				$binderTopTags='<div class="side-left-box">
+						<div class="side-right-box">
+							<div class="side-top-box">
+									<div class="left-top-box">
+										<div class="right-top-box">
+													<div class="inside-box">';
+				echo $binderTopTags;
+				break;
+			case 'bottom-grid':
+					$binderBottomTags='</div>
+											</div>
+							</div>
+						</div>
+					</div>
+				</div>';
+				echo $binderBottomTags;
+				break;
+			case 'top-compare':
+				$binderTopTags='<div class="side-left-compare">
+						<div class="side-right-compare">
+							<div class="side-top-compare">
+								<div class="side-bot-compare">
+									<div class="left-top-compare">
+										<div class="right-top-compare">
+											<div class="left-bot-compare">
+												<div class="right-bot-compare">
+													<div class="inside-compare">';
+				echo $binderTopTags;
+				break;
+			case 'bottom-compare':
+					$binderBottomTags='</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>';
+				echo $binderBottomTags;
+				break;
+			case 'top-title':
+				$binderTopTags='<div class="side-left-title">
+						<div class="side-right-title">
+							<div class="side-top-title">
+								<div class="side-bot-title">
+									<div class="left-top-title">
+										<div class="right-top-title">
+											<div class="left-bot-title">
+												<div class="right-bot-title">
+													<div class="inside-title">';
+				echo $binderTopTags;
+				break;
+			case 'bottom-title':
+					$binderBottomTags='</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>';
+				echo $binderBottomTags;
+				break;
+			default:
+				break;
+		}
+	}
+?>

@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category   design_default
+ * @package    Mage
+ * @copyright  Copyright (c) 2004-2007 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+
+-->
+<layout version="0.1.0">
+
+<!--
+Shopping cart
+-->
+
+    <checkout_cart_index>
+        <!-- Mage_Vcs -->
+        <reference name="checkout.cart.methods">
+            <block type="iveri/link_shortcut" name="checkout.cart.methods.iveri_processing" template="iveri/link.phtml"/>
+        </reference>
+    </checkout_cart_index>
+
+<!--
+    Vcs Failure page after shortcut link invocation
+-->
+    <iveri_processing_failure>
+        <!-- Mage_Vcs -->
+        <remove name="right"/>
+        <remove name="left"/>
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="iveri/failure" name="iveri_failure" template="iveri/failure.phtml" />
+        </reference>
+    </iveri_processing_failure>
+
+    <!--
+        Vcs Failure page after shortcut link invocation
+        -->
+    <iveri_processing_response>
+        <!-- Mage_Vcs -->
+        <remove name="right"/>
+        <remove name="left"/>
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="iveri/success" name="iveri_success" template="iveri/success.phtml" />
+        </reference>
+    </iveri_processing_response>
+
+<!--
+Vcs Review page after shortcut link invocation
+-->
+
+    <iveri_processing_review>
+        <!-- Mage_Vcs -->
+        <remove name="right"/>
+        <remove name="left"/>
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="iveri/review" name="iveri_review" template="iveri/review.phtml">
+                <block type="iveri/review_details" name="iveri_review_details" as="details" template="iveri/review/details.phtml"/>
+            </block>
+        </reference>
+    </iveri_processing_review>
+
+<!--
+Vcs Review details block
+-->
+
+    <iveri_review_details>
+        <!-- Mage_Vcs -->
+        <block type="iveri/review_details" name="root" output="toHtml" template="iveri/review/details.phtml"/>
+    </iveri_review_details>
+
+</layout>

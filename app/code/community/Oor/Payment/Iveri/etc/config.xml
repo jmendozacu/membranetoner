@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category   Mage
+ * @package    Mage_Paygate
+ * @copyright  Copyright (c) 2004-2007 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+   <modules>
+      <Oor_Payment_Iveri>
+         <version>0.1.0</version>
+      </Oor_Payment_Iveri>
+   </modules>
+   
+   <global>
+   
+      <models>
+         <iveri>
+            <class>Oor_Payment_Iveri_Model</class>
+         </iveri>
+      </models>
+      
+      <resources>
+         <iveri_setup>
+            <setup>
+               <module>Oor_Payment_Iveri</module>
+            </setup>
+            <connection>
+               <use>core_setup</use>
+            </connection>
+         </iveri_setup>
+         <iveri_write>
+            <connection>
+               <use>core_write</use>
+            </connection>
+         </iveri_write>
+         <iveri_read>
+            <connection>
+               <use>core_read</use>
+            </connection>
+         </iveri_read>
+      </resources>
+   </global>
+
+    <default>
+        <payment>
+            <iveri>
+                <active>1</active>
+                <cctypes>AE,VI,MC,DI</cctypes>
+                <cgi_url>https://backoffice.iveri.co.za/Lite/Authorise.asp</cgi_url>
+                <debug>0</debug>
+                <email_customer>0</email_customer>
+                <login backend_model="adminhtml/system_config_backend_encrypted"/>
+                <merchant_email></merchant_email>
+                <model>oor_payment_iveri_model_iveri</model>
+                <order_status>1</order_status>
+                <payment_action>authorize</payment_action>
+                <test>1</test>
+                <title>Credit Card (iVeri)</title>
+                <trans_key backend_model="adminhtml/system_config_backend_encrypted"/>
+                <allowspecific>0</allowspecific>
+            </iveri>
+        </payment>
+    </default>
+</config>

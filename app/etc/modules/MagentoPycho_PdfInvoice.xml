@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * 
+ * GuruWebSoft (www.guruwebsoft.com)
+ * 
+ * @author     MagentoPycho <rajen_k_bhtt@hotmail.com>
+ * @category   PDF_Invoice
+ * @package    MagentoPycho_PdfInvoice
+ */
+-->
+<config>
+    <modules>
+        <MagentoPycho_PdfInvoice>
+            <active>true</active>
+            <codePool>local</codePool>
+        </MagentoPycho_PdfInvoice>
+    </modules>
+</config> 

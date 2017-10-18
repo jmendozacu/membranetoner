@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+    <cms_index_index>
+<!--        <reference name="head">
+            <action method="addCss"><stylesheet>magazento/sexybookmarks/shr-custom-sprite.css</stylesheet></action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>magazento/jquery-1.5.1.min.js</name>
+                <params/>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>magazento/sexybookmarks/sexy-bookmarks-public.js</name>
+                <params/>
+            </action>
+        </reference>-->
+        <reference name="content">
+            <block type="core/template"
+            name="magazento_sexybookmarks"
+            after="category.products"
+            template="magazento/sexybookmarks/list.phtml"/>
+        </reference>
+    </cms_index_index>
+
+    <catalog_category_layered>
+<!--        <reference name="head">
+            <action method="addCss"><stylesheet>magazento/sexybookmarks/shr-custom-sprite.css</stylesheet></action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>magazento/jquery-1.5.1.min.js</name>
+                <params/>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>magazento/sexybookmarks/sexy-bookmarks-public.js</name>
+                <params/>
+            </action>
+        </reference>-->
+        <reference name="content">
+            <block type="core/template"
+            name="magazento_sexybookmarks"
+            after="category.products"
+            template="magazento/sexybookmarks/list.phtml"/>
+        </reference>
+    </catalog_category_layered>
+
+    <catalog_product_view>
+<!--        <reference name="head">
+            <action method="addCss"><stylesheet>magazento/sexybookmarks/shr-custom-sprite.css</stylesheet></action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>magazento/jquery-1.5.1.min.js</name>
+                <params/>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>magazento/sexybookmarks/sexy-bookmarks-public.js</name>
+                <params/>
+            </action>
+        </reference>-->
+        <reference name="content">
+            <block type="core/template"
+            name="magazento_sexybookmarks"
+            after="product.info"
+            template="magazento/sexybookmarks/list.phtml"/>
+        </reference>
+    </catalog_product_view>
+</layout>
