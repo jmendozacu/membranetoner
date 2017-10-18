@@ -95,4 +95,15 @@ class Mage_Core_Controller_Varien_Router_Admin extends Mage_Core_Controller_Vari
     {
         return Mage::app()->getStore(Mage_Core_Model_App::ADMIN_STORE_ID)->getBaseUrl('link', true).ltrim($request->getPathInfo(), '/');
     }
+
+    /**
+     * Check if current controller instance is allowed in current router.
+     * 
+     * @param Mage_Core_Controller_Varien_Action $controllerInstance
+     * @return boolean
+     */
+    protected function _validateControllerInstance($controllerInstance)
+    {
+        return true;
+    }
 }
